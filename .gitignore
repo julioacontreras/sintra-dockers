@@ -1,0 +1,9 @@
+auth-service/
+fastdata-service/
+formulary-service/
+mailing-service/
+media-service/
+payment-service/
+vip-*/
+
+

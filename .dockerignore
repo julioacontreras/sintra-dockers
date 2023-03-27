@@ -1,0 +1,9 @@
+media-service/node_modules
+media-service/dist
+media-service/.git
+media-service/.env
+
+auth-service/node_modules
+auth-service/dist
+auth-service/.git
+auth-service/.env

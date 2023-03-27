@@ -1,0 +1,36 @@
+services:
+
+  kafka:
+    image: bitnami/kafka:latest
+    # volumes:
+    #  - config:/bitnami/kafka
+    ports:
+      - '9092:9092'
+
+  faceRecognition:
+    image: facerecognition-services
+    ports:
+      - 5000:5000
+
+  services:
+    image: sintra-services
+    restart: always
+    environment:
+      NODE_ENV: development
+      MEDIA_SERVICE_PORT: 4010    
+      AUTH_SERVICE_PORT: 4000
+      AUTH_SERVICE_MONGO_CONNECTION: mongodb://root:admin@mongo:27017
+      AUTH_SERVICE_DATABASE_NAME: auth
+      AUTH_SERVICE_SECRET_TOKEN: laKSXSAKHXI“¥÷¬Å“÷87t8aDR,EVNERV€{®-√ERÑ´V.LREÑKMVKSJBDJ}
+    ports:
+      - 4000:4000
+      - 4010:4010
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017

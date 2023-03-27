@@ -1,0 +1,7 @@
+{
+  "name": "auth-service",
+  "script": "npm",
+  "args" : "start",
+  "instances": 1,
+  "exec_mode": "cluster"
+}
